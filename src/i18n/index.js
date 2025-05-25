@@ -9,8 +9,9 @@ let loadPath = ""
 let addPath = ""
 
 if (MODE === "production") {
-  loadPath = `/${name}/locales/{{lng}}/{{ns}}.json`
-  addPath = `/${name}/locales/add/{{lng}}/{{ns}}`
+  // 对于 Netlify/Vercel 部署，使用根路径
+  loadPath = "/locales/{{lng}}/{{ns}}.json"
+  addPath = "/locales/add/{{lng}}/{{ns}}"
 } else if (MODE == "test") {
   loadPath = `/${name}-test/locales/{{lng}}/{{ns}}.json`
   addPath = `/${name}-test/locales/add/{{lng}}/{{ns}}`
