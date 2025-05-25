@@ -4,11 +4,16 @@ import svgr from "vite-plugin-svgr"
 import { name } from "./package.json"
 
 const genBaseUrl = (mode) => {
+  // 优先使用环境变量
+  if (process.env.VITE_BASE_URL) {
+    return process.env.VITE_BASE_URL
+  }
   if (mode !== "development") {
     if (mode == "test") {
       return `/${name}-test/`
     }
-    return `/${name}/`
+    // 对于 Vercel/Netlify 部署，使用根路径
+    return "/"
   }
   return "/"
 }
