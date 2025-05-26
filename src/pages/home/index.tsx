@@ -216,12 +216,12 @@ const HomePage = () => {
 
   const onLocalUserChanged = (tracks: IUserTracks) => {
     setLocalTracks(tracks)
-    if (tracks.videoTrack) {
-      dispatch(setLocalVideoMute(false))
-    }
-    if (tracks.audioTrack) {
-      dispatch(setLocalAudioMute(false))
-    }
+    // if (tracks.videoTrack) {
+    //   dispatch(setLocalVideoMute(false))
+    // }
+    // if (tracks.audioTrack) {
+    //   dispatch(setLocalAudioMute(false))
+    // }
   }
 
   const onRtmUserListChanged = (list: ISimpleUserInfo[]) => {

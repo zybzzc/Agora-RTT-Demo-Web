@@ -41,6 +41,13 @@ const CenterArea = (props: ICenterAreaProps) => {
     return !data.audioTrack
   }, [localAudioMute, data])
 
+  console.log("CenterArea", {
+    localAudioMute,
+    localVideoMute,
+    videoMute,
+    audioMute,
+  })
+
   const userNameText = useMemo(() => {
     return data.isLocal ? userInfo.userName + " (Me)" : data.userName
   }, [data])
